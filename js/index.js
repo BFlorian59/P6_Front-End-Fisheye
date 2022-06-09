@@ -1,11 +1,10 @@
-async function init () {
+async function index () {
     const api = new Api('data/photographers.json')
-    // Get data from the json file
     const data = await api.getPhotographer()
 
     const $main = document.querySelector('main')
 
-    // For each photographer object, create a "phtographer element" and add it to the photographers-gallery section
+    //Création d'une card pour chaque photographe
     data.photographers.forEach((photographer) => {
         const pCard = new Photographer_card(photographer)
         const pCardElement = pCard.createphotographer()
@@ -14,4 +13,4 @@ async function init () {
     })
 }
 
-init()
+index()
