@@ -1,6 +1,9 @@
 class App {
     constructor() {
         this.medias = []
+
+        // this.Subject = new Subject()
+        // this.Subject.subscribe(this.Counter)
     }
     // récupérer la base de donnée 
     async fetch() {
@@ -46,6 +49,9 @@ class App {
 
         const sorterform = new Sorterform(medias)
         sorterform.render()
+
+        const likesPrice = new LikesPrice(this.photographer, medias)
+        likesPrice.render()
     }
 }
 

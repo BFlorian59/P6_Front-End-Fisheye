@@ -6,7 +6,7 @@ class Video_media {
         this.file = media.video
         this.price = media.price
         this.date = media.date
-        this.like = media.like
+        this.likes = media.likes
         this.type = 'video'
     }
 

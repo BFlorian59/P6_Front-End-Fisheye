@@ -1,11 +1,21 @@
 class Media_Card{
-    constructor(media)
+    constructor(media, Subject)
     {
         this.media = media
         this.medias = medias
 
         this.$wrapper = document.createElement('div')
         this.$wrapper.classList.add('photo-card-wrapper')
+
+
+    }
+
+    likesButton(){
+     this.$wrapper
+            .querySelector('button')
+            .addEventListener('click', ()=> {
+                    document.getElementById(this.media.id + '-likes-nb').innerHTML = this.media.likes +1
+            })
     }
 
     createmedia(){
@@ -18,11 +28,13 @@ class Media_Card{
             <p class="pnb">${this.media.title}</p>
             <div class="likes">
                 <p id="${this.media.id}-likes-nb">${this.media.likes}</p>
-                <button><i class="fas fa-heart" aria-label="likes"></i></button>
+                <button><i id="coeur" class="fas fa-heart"></i></button>
             <div>
         </div>       
         `
+        
         this.$wrapper.innerHTML = Media_Card
+        this.likesButton()
         return this.$wrapper
     }
 }
