@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="css/normalize.css" rel="stylesheet" />
     <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -12,18 +13,39 @@
       <header>
         <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
       </header>
-    <main id="main">
+      <main>
         <div id="photographe"></div>
-        <div id= "media">
-          <div id = "tri">
-
-          </div>
+        <div id="medias">
+            <div id="listbox-wrapper"></div>
+            <div id="gallery"></div>
         </div>
+        <div id="photographer-likes-price"></div>
     </main>
     </div>
     
-    <script src="js/api/Api.js"></script>
+    <!-- Lib -->
+    <script src="lib/sorter/sorter_photo.js"></script>
+
+    <!-- Factories -->
+    <script src="js/factories/mediaFactory.js"></script>
+
+    <!-- Models -->
+    <script src="js/models/photo_media.js"></script>
+    <script src="js/models/video_media.js"></script>
+
+    <!-- Proxy -->
+    <script src="js/proxy/ProxyPhoto.js"></script>
+
+    <!-- Templates -->
     <script src="js/templates/infoPhotographer.js"></script>
+    <script src="js/templates/media_card.js"></script>
+    <script src="js/templates/sorterform.js"></script>
+
+    <!-- Api -->
+    <script src="js/api/Api.js"></script>
+
+    <!-- Entry point -->
     <script src="js/photographer.js"></script>
+    
   </body>
 </html>
