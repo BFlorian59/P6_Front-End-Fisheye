@@ -4,6 +4,13 @@ class InfoPhotographer{
         this.photographer = photographer;
     }
 
+    displayModal() {
+        const formcontact = new Formcontact()
+        document.querySelector('.contact').addEventListener('click', () => {
+            formcontact.display()
+        })
+    }
+
     info(){
         const photographerInfo = document.querySelector('#photographe')
         const picture = `assets/photographers/Photographers ID Photos/${this.photographer.portrait}`;
@@ -19,5 +26,6 @@ class InfoPhotographer{
 
         `
         photographerInfo.innerHTML = infos
+        this.displayModal()
     }
 }

@@ -1,0 +1,100 @@
+#form-modal {
+    width: 400px;
+    background-color: #D3573C;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    z-index: 1;
+    display: none;
+    padding: 0 20px 0 20px;
+  }
+  
+#form-modal h2 {
+    font-size: 40px;
+    margin: 10px 50px 20px 0;
+}
+  
+#form-modal label {
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+}
+
+#form-modal input {
+    width: 100%;
+    font-size: 30px;
+    border-radius: 5px;
+    border: 0;
+}
+  
+#form-modal textarea {
+    width: 100%;
+    border-radius: 5px;
+    border: 0;
+    resize: none;
+    overflow: hidden;
+    height: 100px;
+}
+  
+#form-modal input[type=submit] {
+    background-color: #901C1C;
+    width: 100px;
+    font-size: 15px;
+    padding: 10px;
+    color: white;
+    display: block;
+    margin: 10px 0 20px 0;
+    cursor: pointer;
+}
+  
+.cross {
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    padding: 0;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background: transparent;
+    color: #901C1C;
+    font: inherit;
+    text-indent: 100%;
+    cursor: pointer;
+}
+  
+.cross:before, .cross:after {
+    position: absolute;
+    top: 15%;
+    left: calc(50% - .0625em);
+    width: .125em;
+    height: 70%;
+    border-radius: .125em;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    background: currentcolor;
+    content: '';
+}
+  
+.cross:after {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+}
+  
+.cross:focus {
+    outline: 0;
+}
+  
+.cross--white:before, .cross--white:after {
+    color: white;
+}

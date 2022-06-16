@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/form.css" rel="stylesheet" type="text/css"/>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
     <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -21,8 +22,9 @@
             <div id="gallery"></div>
         </div>
         <div id="likes-price"></div>
-    </main>
+      </main>
     </div>
+    <div id="form-modal"></div>
     
     <!-- Lib -->
     <script src="lib/sorter/sorter_photo.js"></script>
@@ -38,20 +40,22 @@
     <script src="js/proxy/ProxyPhoto.js"></script>
 
     <!-- Templates -->
-    <script src="js/templates/infoPhotographer.js"></script>
-    <script src="js/templates/media_card.js"></script>
-    <script src="js/templates/sorterform.js"></script>
-    <script src="js/templates/likes_prices.js"></script> 
+    <script src="js/templates/photographer/infoPhotographer.js"></script>
+    <script src="js/templates/photographer/media_card.js"></script>
+    <script src="js/templates/photographer/likes_prices.js"></script>
+    <script src="js/templates/photographer/sorterform.js"></script>
+    <script src="js/templates/contactform/contactForm.js"></script> 
 
     <!-- Api -->
     <script src="js/api/Api.js"></script>
 
     <!-- Pub/Sub -->
  <!-- <script src="/js/wishlist/subject.js"></script> -->
-    <script src="/js/wishlist/counter.js"></script>
+    <script src="js/conteur/counter.js"></script>
+    <script src="js/conteur/likebutton.js"></script>
 
     <!-- Entry point -->
-    <script src="js/photographer.js"></script>
+    <script src="js/app/photographer.js"></script>
     
   </body>
 </html>

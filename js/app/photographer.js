@@ -1,9 +1,6 @@
 class App {
     constructor() {
         this.medias = []
-
-        // this.Subject = new Subject()
-        // this.Subject.subscribe(this.Counter)
     }
     // récupérer la base de donnée 
     async fetch() {
@@ -52,6 +49,9 @@ class App {
 
         const likesPrice = new LikesPrice(this.photographer, medias)
         likesPrice.render()
+
+        const modalForm = new Formcontact(this.photographer)
+        modalForm.form()
     }
 }
 

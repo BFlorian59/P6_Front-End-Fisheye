@@ -1,5 +1,5 @@
 class Media_Card{
-    constructor(media, Subject)
+    constructor(media)
     {
         this.media = media
         this.medias = medias
@@ -19,7 +19,8 @@ class Media_Card{
     }
 
     createmedia(){
-        console.log(this.media)
+        // const likesButton = new Likebutton(this.medias, this.$wrapper )
+        // console.log(this.media)
         const Media_Card = `
         <a class="media-link" href="#">
             <${this.media.type} src="assets/photographers/${this.media.photographerId}/${this.media.file}" alt="${this.media.title}"/>
@@ -32,9 +33,10 @@ class Media_Card{
             <div>
         </div>       
         `
-        
+
         this.$wrapper.innerHTML = Media_Card
         this.likesButton()
+        // likesButton.likesButton()
         return this.$wrapper
     }
 }
