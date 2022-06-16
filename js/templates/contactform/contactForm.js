@@ -6,40 +6,41 @@ class Formcontact{
     }
 
     display () {
-        const modal = document.querySelector('#form-modal')
-        modal.style.display = 'flex'
-        document.querySelector('#form-modal button').focus()
+        this.$formcontact.style.display = 'flex'
     }
 
+    none () {
+        this.$formcontact.style.display = 'none'
+    }
 
-    
-    // closeModal() {
-    //     const modal = document.getElementById("contact_modal");
-    //     modal.style.display = "none";
-    // }
+    onCloseButton () {
+        document.querySelector('.cross').addEventListener('click', () => {
+            this.none()
+        })
+    }
 
     form(){
         const formhtml = `
-        <form action="#" method="post">
+        <form>
             <button class="cross cross--white"></button>
             <div>
                 <h2>Contactez moi ${this.photographer.name}</h2>
             </div>
             <div>
-                <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="prenom">
+                <label>Prénom :</label>
+                <input type="text" id="fprenom" >
             </div>
             <div>
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom">
+                <label>Nom :</label>
+                <input type="text" id="fnom" >
             </div>
             <div>
-                <label for="mail">e-mail&nbsp;:</label>
-                <input type="email" id="mail" name="mail">
+                <label>e-mail&nbsp;:</label>
+                <input type="email" id="fmail" >
             </div>
             <div>
-                <label for="msg">Message :</label>
-                <textarea id="msg" name="msg"></textarea>
+                <label>Message :</label>
+                <textarea id="msg" ></textarea>
             </div>
             <input
                 class="btn-submit"
@@ -50,7 +51,9 @@ class Formcontact{
         </form>
 
         `
+        
         this.$formcontact.innerHTML = formhtml
+        this.onCloseButton()
     }
 
     
