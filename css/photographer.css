@@ -12,14 +12,20 @@ header {
     height: 90px;
 }
 
+header a {
+    height: 100%;
+}
+
 h1 {
     color: #901C1C;
     margin-right: 100px;
 }
 
 .logo {
-    height: 50px;
-    margin-left: 100px;
+    width: 100%;
+    margin-top: 9%;
+    height: 80%;
+    margin-left: 20%;
 }
 
 #contact_modal {
@@ -235,6 +241,8 @@ form input {
     background-color: #D3573C;
     margin-right: 4%;
     font-weight: bold;
+    margin-top: 5%;
+    /* position: fixed; */
 }
 
 #likes-price p:nth-child(1) {
