@@ -138,7 +138,7 @@ main a{
     text-align: center;
 }
 
-form {
+.sorter-form {
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -247,10 +247,15 @@ form input {
 
 #likes-price p:nth-child(1) {
     margin-left: 8%;
+    width: 20%;
 }
 
 #likes-price p:nth-child(2) {
     margin-left: auto;
     margin-right: 8%;
+}
+
+#likes-price i {
+    margin-left: 10%;
 }
 
