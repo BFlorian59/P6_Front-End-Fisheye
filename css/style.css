@@ -12,37 +12,48 @@ header {
     height: 90px;
 }
 
+header a {
+    height: 100%;
+}
+
 h1 {
     color: #901C1C;
     margin-right: 100px;
 }
 
 .logo {
-    height: 50px;
-    margin-left: 100px;
+    width: 100%;
+    margin-top: 9%;
+    height: 80%;
+    margin-left: 20%;
 }
 
 main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
-    margin-top: 100px;
-    margin-left: 10%;
+    margin-top: 8%;
+    text-align: center;
 }
 
 
 
 main  h2 {
     color: #D3573C;
-    font-size: 36px;
+    font-size: 175%;
+    margin-bottom: 4%;
 }
 
 main img {
-    height: 43%;
-    width: 60%;
-    clip-path: ellipse(50% 49%);
+    height: 50%;
+    width: 58%;
+    clip-path: ellipse(49% 50%);
 }
 
 main a{
     text-decoration: none;
+}
+
+.photographer_card_wrapper p {
+    margin: 1%;
 }

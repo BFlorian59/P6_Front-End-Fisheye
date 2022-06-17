@@ -2,7 +2,6 @@ class Sorterform{
     constructor (medias) {
         this.medias = medias
         this.ProxyPhoto = new ProxyPhoto()
-        this.$wrapper = document.createElement('div')
         this.$tri = document.querySelector('#listbox-wrapper')
         this.$mediaWrapper = document.querySelector('#gallery')
     }
@@ -27,7 +26,7 @@ class Sorterform{
     }
 
     onChangeSorter() {
-        this.$wrapper
+        this.$tri
             .querySelector('form')
             .addEventListener('change', e => {
                 const sorter = e.target.value
@@ -53,9 +52,8 @@ class Sorterform{
             </form>
         `
         
-        this.$wrapper.innerHTML = inner
+        this.$tri.innerHTML = inner
         this.onChangeSorter()
-        this.$tri.appendChild(this.$wrapper)
     }
     
 }

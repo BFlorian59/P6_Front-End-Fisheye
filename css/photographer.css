@@ -34,19 +34,30 @@ main {
 main  h2 {
     color: #D3573C;
     font-size: 36px;
+    margin-top: 18%;
 }
 
 main a{
     text-decoration: none;
 }
 
+#photographe p:nth-child(2) {
+    color: #901C1C;
+    font-size: 145%;
+}
+
+#photographe p:nth-child(3) {
+    font-size: 131%;
+}
 
 #photographe {
     display: flex;
     background-color: #FAFAFA;
-    height: 277px;
-    margin-right: 4%;
+    height: 278px;
     gap: 19%;
+    width: 100%;
+    margin-left: -5%;
+
 }
 
 #photographe .img img {
@@ -55,13 +66,23 @@ main a{
 }
 
 #photographe .img {
-    height: 100%;
-    width: 160%;;
-    clip-path: ellipse(41% 49%);
+    margin-top: 1%;
+    margin-right: 2%;
+    height: 93%;
+    width: 70%;
+    clip-path: ellipse(44% 40%);
+
+}
+
+#medias{
+    width: 100%;
+    margin-top: 4%;
+    margin-left: -5%;
 }
 
 .titre{
     width: 90%;
+    margin-left: 3%;
 }
 
 .titre .ville{
@@ -75,15 +96,13 @@ main a{
     font-size: 19px;
     font-weight: bold;
     color: white;
-    width: 70%;
-    height: 24%;
+    width: 53%;
+    height: 21%;
     border: none;
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
     margin: auto;
-    margin-top: 6%;
-    margin-right: 5%;
 }
 
 .modal {
@@ -116,7 +135,7 @@ main a{
 form {
     display: flex;
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
 }
 
@@ -144,8 +163,10 @@ form input {
     margin-top: 10%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 60px;
+    row-gap: 66px;
+    column-gap: 9%;
     z-index: -1;
+    width: 100%;
   }
   
   #medias .photo-card-wrapper {
@@ -177,4 +198,51 @@ form input {
     color: #901C1C;
     font-size: 20px;
   }
-  
+
+.sorter-form select{
+    margin-left: 2%;
+    margin-top: 0%;
+    width: 9%;
+    height: 2.5em;
+    font-size: 127%;
+    background-color: #901C1C;
+    color: white;
+    padding: 0;
+    border: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.sorter-form option {
+    border-top: 1px white solid;
+}
+
+.likes{
+    display: flex;
+    margin-left: auto;
+}
+
+.likes button{
+    color: #901C1C;
+    border: none;
+    background-color: white;
+}
+
+#likes-price{
+    display: flex;
+    width: 22%;
+    margin-left: auto;
+    background-color: #D3573C;
+    margin-right: 4%;
+    font-weight: bold;
+}
+
+#likes-price p:nth-child(1) {
+    margin-left: 8%;
+}
+
+#likes-price p:nth-child(2) {
+    margin-left: auto;
+    margin-right: 8%;
+}
+
