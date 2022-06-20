@@ -44,7 +44,7 @@ class Sorterform{
         <form action="#" method="POST" class="sorter-form">
                 <label for="sorter-select">Triez par : </label>
                 <select name="sorter-select" id="sorter-select">
-                    <option value="">Non triez</option>                    
+                    <option value="">Aucun filtre</option>                    
                     <option value="Popularité">Popularité</option>
                     <option value="Titre">Titre</option>
                     <option value="Date">Date</option>
