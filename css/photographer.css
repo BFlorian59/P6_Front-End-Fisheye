@@ -259,3 +259,37 @@ form input {
     margin-left: 10%;
 }
 
+.lightbox-media{
+    width: 43%;
+    margin: auto;
+}
+
+ .lightbox-img{
+    width: 100%;
+ }
+
+#lightbox{
+    width: 50%;
+    margin: auto;
+    margin-top: 24%;
+    display: none;
+}
+
+.arrow {
+    width: 22px;
+    height: 22px;
+    border: solid #901C1C;
+    border-width: 0 4px 4px 0;
+    margin-top: inherit;
+}
+
+.right {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  
+  .left {
+    -webkit-transform: rotate(135deg);
+            transform: rotate(135deg);
+  }
+

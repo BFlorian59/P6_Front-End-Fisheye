@@ -52,6 +52,9 @@ class App {
 
         const modalForm = new Formcontact(this.photographer)
         modalForm.form()
+
+        const lightbox = new Lightbox(medias)
+        lightbox.render()
     }
 }
 

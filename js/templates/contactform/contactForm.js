@@ -20,12 +20,14 @@ class Formcontact{
     }
 
     form(){
+        // const info = new Photographer_card(this.photographer)
+        // info.createphotographer()
         const formhtml = `
+        <button class="cross cross--white"></button>
+        <div>
+            <h2>Contactez moi ${this.photographer.name}</h2>
+        </div>
         <form>
-            <button class="cross cross--white"></button>
-            <div>
-                <h2>Contactez moi ${this.photographer.name}</h2>
-            </div>
             <div>
                 <label>Prénom :</label>
                 <input type="text" id="fprenom" >

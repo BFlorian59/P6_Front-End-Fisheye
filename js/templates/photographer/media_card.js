@@ -37,6 +37,10 @@ class Media_Card{
         this.$wrapper.innerHTML = Media_Card
         this.likesButton()
         // likesButton.likesButton()
+        this.$wrapper.querySelector('a').addEventListener('click', () => {
+            const lightbox = new Lightbox()
+            lightbox.displaymedia(this.media)
+        })
         return this.$wrapper
     }
 }
