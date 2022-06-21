@@ -11,6 +11,4 @@ async function index () {
 
         $main.appendChild(pCardElement)
     })
-}
-
-index()
+}index()
