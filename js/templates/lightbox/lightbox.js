@@ -13,6 +13,7 @@ class Lightbox{
         `
         document.querySelector('.lightbox-media').innerHTML = imageElement
 
+        
         this.$main.style.display = 'none'
         this.$lightbox.style.display = 'flex'
         this.onCloseButton()

@@ -237,12 +237,11 @@ form input {
 #likes-price{
     display: flex;
     width: 22%;
-    margin-left: auto;
     background-color: #D3573C;
-    margin-right: 4%;
     font-weight: bold;
-    margin-top: 5%;
-    /* position: fixed; */
+    position: fixed; 
+    bottom: 0px;
+    margin-left: 64%;
 }
 
 #likes-price p:nth-child(1) {
@@ -260,19 +259,21 @@ form input {
 }
 
 .lightbox-media{
-    width: 43%;
+    width: 35%;
     margin: auto;
 }
 
  .lightbox-img{
     width: 100%;
+    margin-top: 34%;
  }
 
 #lightbox{
-    width: 50%;
+    width: 100%;
     margin: auto;
-    margin-top: 24%;
-    display: none;
+    margin-top: -4%;
+
+
 }
 
 .arrow {
@@ -280,7 +281,9 @@ form input {
     height: 22px;
     border: solid #901C1C;
     border-width: 0 4px 4px 0;
-    margin-top: inherit;
+    margin-top: 25%;
+    margin-right: 6%;
+    margin-left: 6%;
 }
 
 .right {
