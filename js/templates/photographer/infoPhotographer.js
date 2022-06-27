@@ -17,8 +17,8 @@ class InfoPhotographer{
 
         const infos = `
         <div class= titre>
-            <h2> ${this.photographer.name} </h2>
-            <p class="ville">${this.photographer.city}, ${this.photographer.country}</p>
+            <h1> ${this.photographer.name} </h1>
+            <h2 class="ville">${this.photographer.city}, ${this.photographer.country}</h2>
             <p class="tag">${this.photographer.tagline}</p>
         </div>
         <button class="contact" type="button">Contactez-moi</button>

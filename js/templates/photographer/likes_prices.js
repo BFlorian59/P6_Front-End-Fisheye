@@ -9,7 +9,7 @@ class LikesPrice {
     render () {
         const Count = new Counter(this.photographer, this.photographerMedias)
         const inner = `
-      <p id="plikes">${Count.getLikesNumber().toString()}<i class="fas fa-heart" ></i></p>
+      <p id="plikes">${Count.getLikesNumber().toString()}<i class="fas fa-heart" aria-label="likes" ></i></p>
       <p>${this.photographer.price.toString()}€ / jour</p>
     `
         this.$photographerLikesPrice.innerHTML = inner

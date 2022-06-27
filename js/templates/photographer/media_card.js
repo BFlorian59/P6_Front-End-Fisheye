@@ -6,8 +6,6 @@ class Media_Card{
 
         this.$wrapper = document.createElement('div')
         this.$wrapper.classList.add('photo-card-wrapper')
-
-
     }
 
     likesButton(){
@@ -15,11 +13,12 @@ class Media_Card{
             .querySelector('button')
             .addEventListener('click', ()=> {
                     document.getElementById(this.media.id + '-likes-nb').innerHTML = this.media.likes +1
+                    const totalLikesNb = parseInt(document.getElementById('plikes').textContent) + 1
+                    document.getElementById('plikes').innerHTML = totalLikesNb.toString() + '<i class="fas fa-heart" aria-label="likes"></i>'
             })
     }
 
     createmedia(){
-        // const likesButton = new Likebutton(this.medias, this.$wrapper )
         // console.log(this.media)
         const Media_Card = `
         <a class="media-link" href="#">
@@ -29,7 +28,7 @@ class Media_Card{
             <p class="pnb">${this.media.title}</p>
             <div class="likes">
                 <p id="${this.media.id}-likes-nb">${this.media.likes}</p>
-                <button><i id="coeur" class="fas fa-heart"></i></button>
+                <button aria-label="heart"><i id="coeur" class="fas fa-heart" aria-label="likes"></i></button>
             <div>
         </div>       
         `

@@ -7,10 +7,19 @@ class Formcontact{
     }
 
     display () {
+        const main = document.querySelector('.main-wrapper')
+        main.setAttribute('aria-hidden', 'true')
+        this.$formcontact.setAttribute('aria-hidden', 'false')
         this.$formcontact.style.display = 'flex'
+        document.querySelector('#form-modal button').focus()
     }
 
     none () {
+        const main = document.querySelector('.main-wrapper')
+        main.setAttribute('aria-hidden', 'false')
+        main.style.opacity = '1'
+        document.querySelector('body').classList.remove('no-scroll')
+        this.$formcontact.setAttribute('aria-hidden', 'true')
         this.$formcontact.style.display = 'none'
     }
 
@@ -85,7 +94,7 @@ class Formcontact{
     //     return this.verifiation = true;
     //   }
 
-      onSubmit () {
+    onSubmit () {
             document.querySelector('#form').addEventListener('submit', e => {
                 e.preventDefault()
                 document.querySelectorAll('.iform').forEach((x) => {
@@ -97,10 +106,13 @@ class Formcontact{
     }
 
     form(){
+        this.$formcontact.setAttribute('aria-hidden', true)
+        this.$formcontact.setAttribute('role', 'dialog')
+        this.$formcontact.setAttribute('aria-labelledby', 'formModalTitle')
         // const info = new Photographer_card(this.photographer)
         // info.createphotographer()
         const formhtml = `
-        <button class="cross cross--white"></button>
+        <button aria-label="fermer" class="cross cross--white"></button>
         <div>
             <h2>Contactez moi ${this.photographer.name}</h2>
         </div>
@@ -125,7 +137,7 @@ class Formcontact{
                 <textarea class="iform" id="msg" name="msg" ></textarea>
                 <span id="verifmsg"></span>
             </div>
-            <input type="submit" value"Envoyer"></input>
+            <input aria-label="envoyer" type="submit" value"Envoyer"></input>
         </form>
 
         `

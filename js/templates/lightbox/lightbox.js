@@ -13,9 +13,11 @@ class Lightbox{
         `
         document.querySelector('.lightbox-media').innerHTML = imageElement
 
-        
+        this.$main.setAttribute('aria-hidden', 'true')
         this.$main.style.display = 'none'
+        this.$lightbox.setAttribute('aria-hidden', 'false')
         this.$lightbox.style.display = 'flex'
+        this.$lightbox.querySelector('button').focus()
         this.onCloseButton()
     }
 
@@ -53,11 +55,13 @@ class Lightbox{
 
     none () {
         this.$main.style.display = 'block'
+        this.$lightbox.setAttribute('aria-hidden', 'true')
         this.$lightbox.style.display = 'none'
     }
 
     onCloseButton () {
         this.$lightbox.querySelector('button').addEventListener('click', () => {
+            this.$main.setAttribute('aria-hidden', 'false')
             this.none()
         })
     }
@@ -83,9 +87,11 @@ class Lightbox{
 
 
   render () {
+    this.$lightbox.setAttribute('aria-hidden', true)
+    this.$lightbox.setAttribute('aria-label', 'image closeup view')
     const Content = `
-        <button href="#" class="cross"></button>
-        <a href="#" class="arrow left" id="fleche-gauche"></a>
+        <button href="#" class="cross" aria-label="close"></button>
+        <a href="#" class="arrow left" id="fleche-gauche" aria-label="media précédent"></a>
         <div class="lightbox-media"></div>
         <a href="#" class="arrow right" id="fleche-droite" title="fleche droite" aria-label="media suivant"></a>
     `

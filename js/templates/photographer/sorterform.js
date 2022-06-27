@@ -25,6 +25,28 @@ class Sorterform{
         }
     }
 
+    // addEventListeners () {
+    //     document.querySelectorAll('#listbox-options option').forEach(option => {
+    //         option.addEventListener('click', () => {
+    //             this.sorterMedias(option.innerHTML)
+    //             const currentSort = document.querySelector('.listbox-active-content').innerHTML
+    //             document.querySelector('.listbox-active-content').innerHTML = option.innerHTML
+    //             option.innerHTML = currentSort
+    //         })
+    //     })
+    //     document.querySelector('#listbox-options').addEventListener('keydown', e => {
+    //         const activeEl = document.activeElement
+    //         const currentSort = document.querySelector('.listbox-active-content').innerHTML
+    //         switch (e.key) {
+    //         case 'Enter':
+    //             this.sorterMedias(activeEl.innerHTML)
+    //             document.querySelector('.listbox-active-content').innerHTML = activeEl.innerHTML
+    //             activeEl.innerHTML = currentSort
+    //             break
+    //         }
+    //     })
+    // }
+
     onChangeSorter() {
         this.$tri
             .querySelector('form')
@@ -41,19 +63,20 @@ class Sorterform{
 
     render () {
         const inner = `
-        <form action="#" method="POST" class="sorter-form">
+            <form action="#" method="POST" class="sorter-form" role="filter">
                 <label for="sorter-select">Triez par : </label>
                 <select name="sorter-select" id="sorter-select">
-                    <option value="">Aucun filtre</option>                    
-                    <option value="Popularité">Popularité</option>
-                    <option value="Titre">Titre</option>
-                    <option value="Date">Date</option>
+                    <option role="option" class="listbox-active-content" value="">Aucun filtre</option>              
+                    <option id="listbox-options" role="option" value="Popularité">Popularité</option>
+                    <option id="listbox-options" role="option" value="Titre">Titre</option>
+                    <option id="listbox-options" role="option" value="Date">Date</option>
                 </select>
             </form>
         `
         
         this.$tri.innerHTML = inner
         this.onChangeSorter()
+        // this.addEventListeners()
     }
     
 }
