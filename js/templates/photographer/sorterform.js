@@ -25,28 +25,6 @@ class Sorterform{
         }
     }
 
-    // addEventListeners () {
-    //     document.querySelectorAll('#listbox-options option').forEach(option => {
-    //         option.addEventListener('click', () => {
-    //             this.sorterMedias(option.innerHTML)
-    //             const currentSort = document.querySelector('.listbox-active-content').innerHTML
-    //             document.querySelector('.listbox-active-content').innerHTML = option.innerHTML
-    //             option.innerHTML = currentSort
-    //         })
-    //     })
-    //     document.querySelector('#listbox-options').addEventListener('keydown', e => {
-    //         const activeEl = document.activeElement
-    //         const currentSort = document.querySelector('.listbox-active-content').innerHTML
-    //         switch (e.key) {
-    //         case 'Enter':
-    //             this.sorterMedias(activeEl.innerHTML)
-    //             document.querySelector('.listbox-active-content').innerHTML = activeEl.innerHTML
-    //             activeEl.innerHTML = currentSort
-    //             break
-    //         }
-    //     })
-    // }
-
     onChangeSorter() {
         this.$tri
             .querySelector('form')
@@ -76,7 +54,6 @@ class Sorterform{
         
         this.$tri.innerHTML = inner
         this.onChangeSorter()
-        // this.addEventListeners()
     }
     
 }

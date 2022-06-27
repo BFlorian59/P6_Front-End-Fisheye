@@ -50,7 +50,7 @@ class App {
         const likesPrice = new LikesPrice(this.photographer, medias)
         likesPrice.render()
 
-        const modalForm = new Formcontact(this.photographer)
+        const modalForm = new Formcontact(this.photographer, this.verifiation)
         modalForm.form()
 
         const lightbox = new Lightbox(medias)
