@@ -1,16 +1,16 @@
 class Counter{
     constructor (photographer, photographerMedias) {
-        this.photographer = photographer
-        this.photographerMedias = photographerMedias
+        this.photographer = photographer;
+        this.photographerMedias = photographerMedias;
 
     }
 
     getLikesNumber() {
-        let likesNb = 0
+        let likesNb = 0;
         this.photographerMedias.forEach((media) => {
-            likesNb = likesNb + media.likes
+            likesNb = likesNb + media.likes;
         })
-        return likesNb
+        return likesNb;
     }
 
 }

@@ -2,8 +2,6 @@ class Media_Card{
     constructor(media)
     {
         this.media = media
-        this.medias = medias
-
         this.$wrapper = document.createElement('div')
         this.$wrapper.classList.add('photo-card-wrapper')
     }
@@ -35,7 +33,6 @@ class Media_Card{
 
         this.$wrapper.innerHTML = Media_Card
         this.likesButton()
-        // likesButton.likesButton()
         this.$wrapper.querySelector('a').addEventListener('click', () => {
             const lightbox = new Lightbox()
             lightbox.displaymedia(this.media)

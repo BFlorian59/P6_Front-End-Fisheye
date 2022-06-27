@@ -1,19 +1,19 @@
 class ProxyPhoto{
     constructor() {
-        this.cache = []
+        this.cache = [];
     }
 
     sorter(medias, orderBy) {
         const cachedResult = this.cache.find(elt => elt.key === orderBy)
         if (cachedResult) {
-            console.log('get from cache')
+            console.log("get from cache")
 
-            return cachedResult
+            return cachedResult;
         }
 
-        const data = Sorterphoto.sorter(medias, orderBy)
+        const data = Sorterphoto.sorter(medias, orderBy);
 
-        this.cache.push(data)
-        return data
+        this.cache.push(data);
+        return data;
     }
 }

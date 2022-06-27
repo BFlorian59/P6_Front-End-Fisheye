@@ -42,6 +42,10 @@ class Formcontact{
         const verifmsg  = document.getElementById ('verifmsg')
 
         form.addEventListener("submit", msgvalidate)
+        firstName.onblur = validate;
+        lastName.onblur = validate;
+        eMail.onblur = validate;
+        msg.onblur = validate;
         // fonction de la validation des champs du formulaire
         function validate () {
         
@@ -122,10 +126,6 @@ class Formcontact{
               return true
             }
           }
-          firstName.onblur = validate;
-          lastName.onblur = validate;
-          eMail.onblur = validate;
-          msg.onblur = validate;
     }
 
     form(){
@@ -151,7 +151,7 @@ class Formcontact{
                 <span id="verifnom"></span>
             </div>
             <div>
-                <label for="fmail">e-mail&nbsp;:</label>
+                <label for="fmail">E-mail&nbsp;:</label>
                 <input type="email" class="iform" name="fmail" id="fmail" >
                 <span id="verifmail"></span>
             </div>
