@@ -3,12 +3,13 @@ class Lightbox{
         this.medias =medias
         this.$lightbox = document.querySelector('#lightbox')
         this.$main = document.querySelector('.main-wrapper')
+        this.$attachedMedia = document.activeElement
     }
 
     displaymedia (media) {
         const picture = `assets/photographers/${media.photographerId}/${media.file}`;
         const imageElement = `
-            <${media.type} src="${picture}" media-id="${media.id}" class="lightbox-img" alt="${media.title}" />
+            <${media.type} controls autoplay  src="${picture}" media-id="${media.id}" class="lightbox-img" alt="${media.title}" />
             <p>${media.title}</p>
         `
         document.querySelector('.lightbox-media').innerHTML = imageElement
@@ -17,8 +18,8 @@ class Lightbox{
         this.$main.style.display = 'none'
         this.$lightbox.setAttribute('aria-hidden', 'false')
         this.$lightbox.style.display = 'flex'
-        this.$lightbox.querySelector('button').focus()
         this.onCloseButton()
+        this.$lightbox.querySelector('button').focus()
     }
 
     nextmedia(direction){
@@ -47,7 +48,7 @@ class Lightbox{
         const pictureindex = `assets/photographers/${this.medias[mediaIndex].photographerId}/${this.medias[mediaIndex].file}`;
         lightboxMedia.innerHTML = ''
         const imageElement = `
-          <${this.medias[mediaIndex].type} src='${pictureindex}' media-id='${this.medias[mediaIndex].id}' class='lightbox-img' alt='${this.medias[mediaIndex].title}' />
+          <${this.medias[mediaIndex].type} controls autoplay src='${pictureindex}' media-id='${this.medias[mediaIndex].id}' class='lightbox-img' alt='${this.medias[mediaIndex].title}' />
           <p>${this.medias[mediaIndex].title}</p>
         `
         lightboxMedia.innerHTML = imageElement
@@ -55,13 +56,14 @@ class Lightbox{
 
     none () {
         this.$main.style.display = 'block'
+        this.$main.setAttribute('aria-hidden', 'false')
         this.$lightbox.setAttribute('aria-hidden', 'true')
         this.$lightbox.style.display = 'none'
+        this.$attachedMedia.focus()
     }
 
     onCloseButton () {
         this.$lightbox.querySelector('button').addEventListener('click', () => {
-            this.$main.setAttribute('aria-hidden', 'false')
             this.none()
         })
     }

@@ -7,12 +7,12 @@ class InfoPhotographer{
     displayModal() {
         const formcontact = new Formcontact()
         document.querySelector('.contact').addEventListener('click', () => {
-            formcontact.display()
+            formcontact.display();
         })
     }
 
     info(){
-        const photographerInfo = document.querySelector('#photographe')
+        const photographerInfo = document.querySelector('#photographe');
         const picture = `assets/photographers/Photographers ID Photos/${this.photographer.portrait}`;
 
         const infos = `
@@ -25,7 +25,7 @@ class InfoPhotographer{
         <div class =img><img src="${picture}" alt="${this.photographer.name}"/></div>
 
         `
-        photographerInfo.innerHTML = infos
-        this.displayModal()
+        photographerInfo.innerHTML = infos;
+        this.displayModal();
     }
 }

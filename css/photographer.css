@@ -205,23 +205,53 @@ form input {
     font-size: 20px;
   }
 
-.sorter-form select{
-    margin-left: 2%;
-    margin-top: 0%;
-    width: 9%;
-    height: 2.5em;
-    font-size: 100%;
+  #medias #listbox-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  #medias #listbox-wrapper label {
+    font-weight: bold;
+    margin-right: 15px;
+    padding-top: 12px;
+  }
+  
+  #medias #listbox-wrapper #listbox {
     background-color: #901C1C;
     color: white;
+    width: 170px;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 20px;
+  }
+  
+  #medias #listbox-wrapper #listbox button {
+    background-color: #901C1C;
+    color: white;
+    width: 100%;
+    text-align: left;
     padding: 0;
     border: none;
     position: relative;
     cursor: pointer;
-}
-
-.sorter-form option {
+  }
+  
+  #medias #listbox-wrapper #listbox button .listbox-active-content {
+    width: 50%;
+    padding: 10px 5px 10px 18px;
+  }
+  
+  #medias #listbox-wrapper #listbox #listbox-options {
+    display: none;
+    padding: 0 8px 0 8px;
+  }
+  
+  #medias #listbox-wrapper #listbox #listbox-options .option {
     border-top: 1px white solid;
-}
+    padding: 10px 5px 10px 8px;
+    cursor: pointer;
+  }
 
 .likes{
     display: flex;
@@ -277,16 +307,6 @@ form input {
 
 }
 
-.arrow {
-    width: 22px;
-    height: 22px;
-    border: solid #901C1C;
-    border-width: 0 4px 4px 0;
-    margin-top: 25%;
-    margin-right: 6%;
-    margin-left: 6%;
-}
-
 .right {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
@@ -297,3 +317,37 @@ form input {
             transform: rotate(135deg);
   }
 
+
+  .arrow {
+    width: 22px;
+    height: 22px;
+    border: solid #901C1C;
+    border-width: 0 4px 4px 0;
+    /*&:focus {
+          border-width: 0 3px 3px 0;
+          outline: none;
+      }*/
+  }
+
+  #medias #listbox-wrapper #listbox button .arrow {
+    width: 10px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+  
+  #medias #listbox-wrapper #listbox button .arrow--up {
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+    position: absolute;
+    top: 20px;
+    display: none;
+  }
+  
+  #medias #listbox-wrapper #listbox button .arrow--down {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }

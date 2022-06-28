@@ -5,8 +5,8 @@ class Photographer_card{
     }
 
     createphotographer(){
-        const $section = document.createElement('div')
-        $section.classList.add('photographer_card_wrapper')
+        const $section = document.createElement('div');
+        $section.classList.add('photographer_card_wrapper');
         const picture = `assets/photographers/Photographers ID Photos/${this.photographer.portrait}`;
         
         //modification url
@@ -25,6 +25,6 @@ class Photographer_card{
         <p>${this.photographer.tagline}</p>
         <p>${this.photographer.price}€/jour</p> `
         $section.innerHTML = Card_photographer
-        return $section
+        return $section;
     }
 }

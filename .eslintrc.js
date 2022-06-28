@@ -1,21 +1,26 @@
 module.exports = {
-    "ecmaFeatures": {
-        "blockBindings": true,
-        "modules": true,
-        "superInFunctions": true
-      },
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "node": true
-    },
-    "parserOptions": {
-        "ecmaVersion": "latest"
-    },
-    "extends": "eslint:recommended",
-    "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"]
-    }
 
+    "extends": "eslint:recommended",
+
+     "parser": "babel-eslint",
+
+       
+
+    "env": {
+
+        "browser": true,
+
+        "es2021": true,
+
+        "node": true
+
+    },
+
+    "rules": {
+
+    "no-console": "off",
+    "no-invalid-regexp": "warn",
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"]
+    }
 };

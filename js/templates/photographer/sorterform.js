@@ -24,14 +24,40 @@ class Sorterform{
             })
         }
     }
-
-    onChangeSorter() {
-        this.$tri
-            .querySelector('form')
-            .addEventListener('change', e => {
-                const sorter = e.target.value
-                this.sorterMedias(sorter)
+    addEventListeners () {
+        const listboxOptions = document.querySelector('#listbox-options')
+        document.querySelector('#listbox-active').addEventListener('click', () => {
+            if (!listboxOptions.getAttribute('style') || listboxOptions.style.display === 'none') {
+                document.querySelector('#listbox-active').setAttribute('aria-expanded', true)
+                listboxOptions.style.display = 'block'
+                document.querySelector('.arrow--up').style.display = 'block'
+                document.querySelector('.arrow--down').style.display = 'none'
+            } else {
+                listboxOptions.style.display = 'none'
+                document.querySelector('#listbox-active').setAttribute('aria-expanded', false)
+                document.querySelector('.arrow--up').style.display = 'none'
+                document.querySelector('.arrow--down').style.display = 'block'
+            }
+        })
+        document.querySelectorAll('#listbox-options div').forEach(option => {
+            option.addEventListener('click', () => {
+                this.sorterMedias(option.innerHTML)
+                const currentSort = document.querySelector('.listbox-active-content').innerHTML
+                document.querySelector('.listbox-active-content').innerHTML = option.innerHTML
+                option.innerHTML = currentSort
             })
+        })
+        document.querySelector('#listbox-options').addEventListener('keydown', e => {
+            const activeEl = document.activeElement
+            const currentSort = document.querySelector('.listbox-active-content').innerHTML
+            switch (e.key) {
+            case 'Enter':
+                this.sorterMedias(activeEl.innerHTML)
+                document.querySelector('.listbox-active-content').innerHTML = activeEl.innerHTML
+                activeEl.innerHTML = currentSort
+                break
+            }
+        })
     }
 
     clearMoviesWrapper() {
@@ -41,19 +67,22 @@ class Sorterform{
 
     render () {
         const inner = `
-            <form action="#" method="POST" class="sorter-form" role="filter">
-                <label for="sorter-select">Triez par : </label>
-                <select name="sorter-select" id="sorter-select">
-                    <option role="option" class="listbox-active-content" value="">Aucun filtre</option>              
-                    <option id="listbox-options" role="option" value="Popularité">Popularité</option>
-                    <option id="listbox-options" role="option" value="Titre">Titre</option>
-                    <option id="listbox-options" role="option" value="Date">Date</option>
-                </select>
-            </form>
+        <label id="listbox-label">Trier par</label>
+        <div role="listbox" id="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-active">
+            <button id="listbox-active" aria-selected="true" aria-haspopup="listbox" aria-expanded="false">
+            <div class="arrow arrow--up"></div>
+            <div class="arrow arrow--down"></div>
+                <div class="listbox-active-content">Popularité</div>
+            </button>
+            <div id="listbox-options">
+                <div role="option" aria-selected="false" class="option" tabindex="0">Titre</div>
+                <div role="option" aria-selected="false" class="option" tabindex="0">Date</div>
+            </div>
+        </div>
         `
         
         this.$tri.innerHTML = inner
-        this.onChangeSorter()
+        this.addEventListeners()
     }
     
 }

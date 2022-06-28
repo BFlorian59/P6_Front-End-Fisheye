@@ -7,6 +7,6 @@ class Photo_media {
         this.price = media.price;
         this.date = media.date;
         this.likes = media.likes;
-        this.type = "img"
+        this.type = "img";
     }
 }

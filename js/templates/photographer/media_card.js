@@ -20,7 +20,7 @@ class Media_Card{
         // console.log(this.media)
         const Media_Card = `
         <a class="media-link" href="#">
-            <${this.media.type} src="assets/photographers/${this.media.photographerId}/${this.media.file}" alt="${this.media.title}"/>
+            <${this.media.type} src="assets/photographers/${this.media.photographerId}/${this.media.file}" alt="${this.media.title}"></${this.media.type}/>
         </a>
         <div class="text">
             <p class="pnb">${this.media.title}</p>

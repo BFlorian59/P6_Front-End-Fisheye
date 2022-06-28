@@ -46,6 +46,7 @@ class App {
 
         const sorterform = new Sorterform(medias);
         sorterform.render();
+        sorterform.sorterMedias('Popularité');
 
         const likesPrice = new LikesPrice(this.photographer, medias);
         likesPrice.render();
@@ -55,6 +56,7 @@ class App {
 
         const lightbox = new Lightbox(medias);
         lightbox.render();
+
     }
 }
 
