@@ -241,7 +241,7 @@ form input {
     width: 50%;
     padding: 10px 5px 10px 18px;
   }
-  
+    
   #medias #listbox-wrapper #listbox #listbox-options {
     display: none;
     padding: 0 8px 0 8px;
@@ -307,6 +307,16 @@ form input {
 
 }
 
+#lightbox .arrow {
+    width: 22px;
+    height: 22px;
+    border: solid #901C1C;
+    border-width: 0 4px 4px 0;
+    margin-top: 25%;
+    margin-right: 6%;
+    margin-left: 6%;
+}
+
 .right {
     -webkit-transform: rotate(-45deg);
             transform: rotate(-45deg);
@@ -318,7 +328,7 @@ form input {
   }
 
 
-  .arrow {
+  #listbox-active .arrow {
     width: 22px;
     height: 22px;
     border: solid #901C1C;
