@@ -1,26 +1,19 @@
 module.exports = {
 
-    "extends": "eslint:recommended",
 
-     "parser": "babel-eslint",
+  "parserOptions": {
 
-       
+      "ecmaVersion": "latest"
 
-    "env": {
+  },
 
-        "browser": true,
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+  }
 
-        "es2021": true,
 
-        "node": true
-
-    },
-
-    "rules": {
-
-    "no-console": "off",
-    "no-invalid-regexp": "warn",
-    "semi": ["error", "always"],
-    "quotes": ["error", "double"]
-    }
 };
