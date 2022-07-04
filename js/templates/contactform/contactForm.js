@@ -8,6 +8,7 @@ class Formcontact{
   display () {
     const main = document.querySelector('.main-wrapper');
     main.setAttribute('aria-hidden', 'true');
+    main.style.opacity = '0.5';
     this.$formcontact.setAttribute('aria-hidden', 'false');
     this.$formcontact.style.display = 'flex';
     document.querySelector('#close').focus();
@@ -20,7 +21,7 @@ class Formcontact{
     document.querySelector('body').classList.remove('no-scroll');
     this.$formcontact.setAttribute('aria-hidden', 'true');
     this.$formcontact.style.display = 'none';
-    $contactez.focus();
+    this.$contactez.focus();
   }
 
   onCloseButton () {
@@ -29,103 +30,112 @@ class Formcontact{
     })
   }
 
+  echap(){
+    // Close modal when escape key is pressed
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          this.none();
+        }
+    })
+}
+
   onSubmit () {
 
-  var verifiation = false;
-  const firstName  = document.getElementById ('fprenom');
-  const lastName  = document.getElementById ('fnom');
-  const eMail  = document.getElementById ('fmail');
-  const msg = document.getElementById ('msg');
+    var verifiation = false;
+    const firstName  = document.getElementById ('fprenom');
+    const lastName  = document.getElementById ('fnom');
+    const eMail  = document.getElementById ('fmail');
+    const msg = document.getElementById ('msg');
 
-  const veriffirst  = document.getElementById ('verifprenom');
-  const veriflast  = document.getElementById ('verifnom');
-  const verifemail  = document.getElementById ('verifmail');
-  const verifmsg  = document.getElementById ('verifmsg');
+    const veriffirst  = document.getElementById ('verifprenom');
+    const veriflast  = document.getElementById ('verifnom');
+    const verifemail  = document.getElementById ('verifmail');
+    const verifmsg  = document.getElementById ('verifmsg');
 
-  form.addEventListener("submit", msgvalidate);
-  firstName.onblur = validate;
-  lastName.onblur = validate;
-  eMail.onblur = validate;
-  msg.onblur = validate;
-  // fonction de la validation des champs du formulaire
-  function validate () {
-        
-    if (firstName.value !== null && firstName.value.length < 2) {
-      veriffirst.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom";
-      firstName.style.borderColor = "red";
-      firstName.style.borderWidth = "2px";
-      return verifiation = false;
+    form.addEventListener("submit", msgvalidate);
+    firstName.onblur = validate;
+    lastName.onblur = validate;
+    eMail.onblur = validate;
+    msg.onblur = validate;
+    // fonction de la validation des champs du formulaire
+    function validate () {
+          
+      if (firstName.value !== null && firstName.value.length < 2) {
+        veriffirst.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du prénom";
+        firstName.style.borderColor = "red";
+        firstName.style.borderWidth = "2px";
+        return verifiation = false;
+      } 
+      else{
+        firstName.style.border= "none";
+        veriffirst.style.display = "none";
+      };
+          
+          
+      if (lastName.value !== null && lastName.value.length < 2) { 
+        veriflast.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom";
+        lastName.style.borderColor = "red";
+        lastName.style.borderWidth = "2px";
+        return verifiation = false;
+      }
+      else
+      {
+        lastName.style.border= "none";
+        veriflast.style.display = "none";
+      };
+          
+          
+      if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(eMail.value)) { 
+        verifemail.innerHTML = "Veuillez remplir le champ email";
+        eMail.style.borderColor = "red";
+        eMail.style.borderWidth = "2px";
+        return verifiation = false;
+      }
+      else
+      {
+        eMail.style.border= "none";
+        verifemail.style.display = "none";
+      };
+          
+          
+      if(!msg.value) {
+        verifmsg.innerHTML = "Veuillez entrer un message";
+        msg.style.borderColor = "red";
+        msg.style.borderWidth = "2px";
+        return verifiation = false;
+      } 
+      else
+      {
+        msg.style.border= "none";
+        verifmsg.style.display = "none";
+      };       
+      return verifiation = true;
     } 
-    else{
-      firstName.style.border= "none";
-      veriffirst.style.display = "none";
-    };
-        
-        
-    if (lastName.value !== null && lastName.value.length < 2) { 
-      veriflast.innerHTML = "Veuillez entrer 2 caractères ou plus pour le champ du nom";
-      lastName.style.borderColor = "red";
-      lastName.style.borderWidth = "2px";
-      return verifiation = false;
-    }
-    else
-    {
-      lastName.style.border= "none";
-      veriflast.style.display = "none";
-    };
-        
-        
-    if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(eMail.value)) { 
-      verifemail.innerHTML = "Veuillez remplir le champ email";
-      eMail.style.borderColor = "red";
-      eMail.style.borderWidth = "2px";
-      return verifiation = false;
-    }
-    else
-    {
-      eMail.style.border= "none";
-      verifemail.style.display = "none";
-    };
-        
-        
-    if(!msg.value) {
-      verifmsg.innerHTML = "Veuillez entrer un message";
-      msg.style.borderColor = "red";
-      msg.style.borderWidth = "2px";
-      return verifiation = false;
-    } 
-    else
-    {
-      msg.style.border= "none";
-      verifmsg.style.display = "none";
-    };       
-    return verifiation = true;
-  } 
-        
-  // fonction qui permet l'affichage de la confirmation 
-  function msgvalidate(submit){
-        
-    // évite le comportement par défaut du bouton submit
-    submit.preventDefault();
-    // run la fonction validate 
-    validate();
-    // si la condition est vraie alors elle affiche le message
-    if(verifiation === true) {
-      document.querySelectorAll('.iform').forEach((x) => {
-        console.log(x.getAttribute('name') + ' : ' + x.value);
-        x.value = '';
-      })
-      const main = document.querySelector('.main-wrapper');
-      main.setAttribute('aria-hidden', 'false');
-      main.style.opacity = '1';
-      document.querySelector('body').classList.remove('no-scroll');
-      document.querySelector('#form-modal').setAttribute('aria-hidden', 'true');
-      document.querySelector('#form-modal').style.display = 'none';
-      document.querySelector('.contact').focus();
-      return true;
+          
+    // fonction qui permet l'affichage de la confirmation 
+    function msgvalidate(submit){
+          
+      // évite le comportement par défaut du bouton submit
+      submit.preventDefault();
+      // run la fonction validate 
+      validate();
+      // si la condition est vraie alors elle affiche le message
+      if(verifiation === true) {
+        document.querySelectorAll('.iform').forEach((x) => {
+          console.log(x.getAttribute('name') + ' : ' + x.value);
+          x.value = '';
+        })
+        const main = document.querySelector('.main-wrapper');
+        main.setAttribute('aria-hidden', 'false');
+        main.style.opacity = '1';
+        document.querySelector('body').classList.remove('no-scroll');
+        document.querySelector('#form-modal').setAttribute('aria-hidden', 'true');
+        document.querySelector('#form-modal').style.display = 'none';
+        document.querySelector('.contact').focus();
+        return true;
+      }
     }
   }
-}
 
   form(){
     this.$formcontact.setAttribute('aria-hidden', true);
@@ -165,6 +175,7 @@ class Formcontact{
     this.$formcontact.innerHTML = formhtml;
     this.onCloseButton();
     this.onSubmit();
+    this.echap();
   }
 }
 

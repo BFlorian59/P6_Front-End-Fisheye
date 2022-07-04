@@ -62,11 +62,22 @@ class Lightbox{
         this.$attachedMedia.focus()
     }
 
+    echap(){
+        // Close modal when escape key is pressed
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+              this.none();
+            }
+        })
+    }
+
     onCloseButton () {
         this.$lightbox.querySelector('button').addEventListener('click', () => {
             this.none()
         })
     }
+        
+ 
 
     eventarrow(){
         document.querySelector('#fleche-droite').addEventListener('click', () => {
@@ -86,7 +97,7 @@ class Lightbox{
             }
         })
     }
-
+    
 
   render () {
     this.$lightbox.setAttribute('aria-hidden', true)
@@ -97,8 +108,9 @@ class Lightbox{
         <div class="lightbox-media"></div>
         <a href="#" class="arrow right" id="fleche-droite" title="fleche droite" aria-label="media suivant"></a>
     `
-    this.$lightbox.innerHTML = Content
-    this.eventarrow()
+    this.$lightbox.innerHTML = Content;
+    this.eventarrow();
+    this.echap();
 
     }
 }
