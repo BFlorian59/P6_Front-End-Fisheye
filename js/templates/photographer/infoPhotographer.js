@@ -5,10 +5,10 @@ class InfoPhotographer{
     }
 
     displayModal() {
-        const formcontact = new Formcontact()
+        const formcontact = new Formcontact();
         document.querySelector('.contact').addEventListener('click', () => {
             formcontact.display();
-        })
+        });
     }
 
     info(){
@@ -24,7 +24,7 @@ class InfoPhotographer{
         <button class="contact" type="button">Contactez-moi</button>
         <div class =img><img src="${picture}" alt="${this.photographer.name}"/></div>
 
-        `
+        `;
         photographerInfo.innerHTML = infos;
         this.displayModal();
     }

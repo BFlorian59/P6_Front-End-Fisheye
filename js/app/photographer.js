@@ -27,13 +27,13 @@ class App {
                 console.log(photographerId);
 
             }
-        })    
+        });    
     }
     async main () {
-        const $main = document.querySelector('#gallery')
+        const $main = document.querySelector('#gallery');
         await this.fetch();        
         //instancier la class InfoPhotographer + appele de la méthode info
-        const photographe = new InfoPhotographer(this.photographer)
+        const photographe = new InfoPhotographer(this.photographer);
         photographe.info();
         
         const medias = this.medias.map((media) => new MediaFactory(media));
@@ -42,7 +42,7 @@ class App {
             const pCard = new Media_Card(item);
             const pCardElement =pCard.createmedia();
             $main.appendChild(pCardElement);
-        })
+        });
 
         const sorterform = new Sorterform(medias);
         sorterform.render();

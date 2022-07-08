@@ -24,6 +24,8 @@ class Sorterform{
             });
         }
     }
+
+    //l’accessibilité sur la listbox
     addEventListeners () {
         const listboxOptions = document.querySelector("#listbox-options");
         document.querySelector("#listbox-active").addEventListener("click", () => {

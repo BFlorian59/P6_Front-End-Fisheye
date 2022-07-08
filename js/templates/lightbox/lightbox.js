@@ -1,9 +1,9 @@
 class Lightbox{
     constructor(medias){
-        this.medias =medias
-        this.$lightbox = document.querySelector('#lightbox')
-        this.$main = document.querySelector('.main-wrapper')
-        this.$attachedMedia = document.activeElement
+        this.medias =medias;
+        this.$lightbox = document.querySelector('#lightbox');
+        this.$main = document.querySelector('.main-wrapper');
+        this.$attachedMedia = document.activeElement;
     }
 
     displaymedia (media) {
@@ -11,55 +11,55 @@ class Lightbox{
         const imageElement = `
             <${media.type} controls autoplay  src="${picture}" media-id="${media.id}" class="lightbox-img" alt="${media.title}" />
             <p>${media.title}</p>
-        `
-        document.querySelector('.lightbox-media').innerHTML = imageElement
+        `;
+        document.querySelector('.lightbox-media').innerHTML = imageElement;
 
-        this.$main.setAttribute('aria-hidden', 'true')
-        this.$main.style.display = 'none'
-        this.$lightbox.setAttribute('aria-hidden', 'false')
-        this.$lightbox.style.display = 'flex'
-        this.onCloseButton()
-        this.$lightbox.querySelector('button').focus()
+        this.$main.setAttribute('aria-hidden', 'true');
+        this.$main.style.display = 'none';
+        this.$lightbox.setAttribute('aria-hidden', 'false');
+        this.$lightbox.style.display = 'flex';
+        this.onCloseButton();
+        this.$lightbox.querySelector('button').focus();
     }
 
     nextmedia(direction){
         //Obtenir l'index dans les médias de l'image courante avec l'attribut media-id ajouté par la fonction d'affichage Lightbox
-        const currentMediaId = document.querySelector('.lightbox-img').getAttribute('media-id')
-        let mediaIndex
+        const currentMediaId = document.querySelector('.lightbox-img').getAttribute('media-id');
+        let mediaIndex;
         for (let i = 0; i < this.medias.length; i++) {
             if (this.medias[i].id.toString() === currentMediaId) {
-                mediaIndex = i
+                mediaIndex = i;
             }
         }
         if (direction === 'gauche' && mediaIndex === 0) {
-            mediaIndex = this.medias.length - 1
+            mediaIndex = this.medias.length - 1;
         } else if (direction === 'gauche') {
-            mediaIndex--
+            mediaIndex--;
         }
 
         if (direction === 'droite' && mediaIndex === this.medias.length - 1) {
-            mediaIndex = 0
+            mediaIndex = 0;
         } else if (direction === 'droite') {
-            mediaIndex++
+            mediaIndex++;
         }
 
         // afficher l'image suivante
-        const lightboxMedia = document.querySelector('.lightbox-media')
+        const lightboxMedia = document.querySelector('.lightbox-media');
         const pictureindex = `assets/photographers/${this.medias[mediaIndex].photographerId}/${this.medias[mediaIndex].file}`;
-        lightboxMedia.innerHTML = ''
+        lightboxMedia.innerHTML = '';
         const imageElement = `
           <${this.medias[mediaIndex].type} controls autoplay src='${pictureindex}' media-id='${this.medias[mediaIndex].id}' class='lightbox-img' alt='${this.medias[mediaIndex].title}' />
           <p>${this.medias[mediaIndex].title}</p>
-        `
-        lightboxMedia.innerHTML = imageElement
+        `;
+        lightboxMedia.innerHTML = imageElement;
     }
 
     none () {
-        this.$main.style.display = 'block'
-        this.$main.setAttribute('aria-hidden', 'false')
-        this.$lightbox.setAttribute('aria-hidden', 'true')
-        this.$lightbox.style.display = 'none'
-        this.$attachedMedia.focus()
+        this.$main.style.display = 'block';
+        this.$main.setAttribute('aria-hidden', 'false');
+        this.$lightbox.setAttribute('aria-hidden', 'true');
+        this.$lightbox.style.display = 'none';
+        this.$attachedMedia.focus();
     }
 
     echap(){
@@ -68,46 +68,46 @@ class Lightbox{
             if (event.key === 'Escape') {
               this.none();
             }
-        })
+        });
     }
 
     onCloseButton () {
         this.$lightbox.querySelector('button').addEventListener('click', () => {
-            this.none()
-        })
+            this.none();
+        });
     }
         
  
-
+    //l’accessibilité sur les flèches
     eventarrow(){
         document.querySelector('#fleche-droite').addEventListener('click', () => {
-            this.nextmedia('droite')
-        })
+            this.nextmedia('droite');
+        });
         document.querySelector('#fleche-gauche').addEventListener('click', () => {
-            this.nextmedia('gauche')
-        })
+            this.nextmedia('gauche');
+        });
         addEventListener('keydown', event =>{
             switch (event.key){
                 case 'droite':
-                    this.nextmedia('droite')
-                    break
+                    this.nextmedia('droite');
+                    break;
                 case 'gauche':
-                    this.nextmedia('gauche')
-                    break
+                    this.nextmedia('gauche');
+                    break;
             }
-        })
+        });
     }
     
 
   render () {
-    this.$lightbox.setAttribute('aria-hidden', true)
-    this.$lightbox.setAttribute('aria-label', 'image closeup view')
+    this.$lightbox.setAttribute('aria-hidden', true);
+    this.$lightbox.setAttribute('aria-label', 'image closeup view');
     const Content = `
         <button href="#" class="cross" aria-label="close"></button>
         <a href="#" class="arrow left" id="fleche-gauche" aria-label="media précédent"></a>
         <div class="lightbox-media"></div>
         <a href="#" class="arrow right" id="fleche-droite" title="fleche droite" aria-label="media suivant"></a>
-    `
+    `;
     this.$lightbox.innerHTML = Content;
     this.eventarrow();
     this.echap();

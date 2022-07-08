@@ -27,7 +27,7 @@ class Formcontact{
   onCloseButton () {
     document.querySelector('.cross').addEventListener('click', () => {
       this.none();
-    })
+    });
   }
 
   echap(){
@@ -36,9 +36,10 @@ class Formcontact{
         if (event.key === 'Escape') {
           this.none();
         }
-    })
+    });
 }
 
+  // la validation sur le formulaire
   onSubmit () {
 
     var verifiation = false;
@@ -124,7 +125,7 @@ class Formcontact{
         document.querySelectorAll('.iform').forEach((x) => {
           console.log(x.getAttribute('name') + ' : ' + x.value);
           x.value = '';
-        })
+        });
         const main = document.querySelector('.main-wrapper');
         main.setAttribute('aria-hidden', 'false');
         main.style.opacity = '1';
@@ -170,7 +171,7 @@ class Formcontact{
         <span id="verifmsg"></span>
       </div>
       <input aria-label="envoyer" type="submit" value"Envoyer"></input>
-    </form>`
+    </form>`;
         
     this.$formcontact.innerHTML = formhtml;
     this.onCloseButton();

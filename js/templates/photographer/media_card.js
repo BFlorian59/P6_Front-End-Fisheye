@@ -1,19 +1,20 @@
 class Media_Card{
     constructor(media)
     {
-        this.media = media
-        this.$wrapper = document.createElement('div')
-        this.$wrapper.classList.add('photo-card-wrapper')
+        this.media = media;
+        this.$wrapper = document.createElement('div');
+        this.$wrapper.classList.add('photo-card-wrapper');
     }
 
+    // +1 sur les coeurs et le coeur total
     likesButton(){
      this.$wrapper
             .querySelector('button')
             .addEventListener('click', ()=> {
-                    document.getElementById(this.media.id + '-likes-nb').innerHTML = this.media.likes +1
-                    const totalLikesNb = parseInt(document.getElementById('plikes').textContent) + 1
-                    document.getElementById('plikes').innerHTML = totalLikesNb.toString() + '<i class="fas fa-heart" aria-label="likes"></i>'
-            })
+                    document.getElementById(this.media.id + '-likes-nb').innerHTML = this.media.likes +1;
+                    const totalLikesNb = parseInt(document.getElementById('plikes').textContent) + 1;
+                    document.getElementById('plikes').innerHTML = totalLikesNb.toString() + '<i class="fas fa-heart" aria-label="likes"></i>';
+            });
     }
 
     createmedia(){
@@ -29,14 +30,14 @@ class Media_Card{
                 <button aria-label="heart"><i id="coeur" class="fas fa-heart" aria-label="likes"></i></button>
             <div>
         </div>       
-        `
+        `;
 
-        this.$wrapper.innerHTML = Media_Card
-        this.likesButton()
+        this.$wrapper.innerHTML = Media_Card;
+        this.likesButton();
         this.$wrapper.querySelector('a').addEventListener('click', () => {
-            const lightbox = new Lightbox()
-            lightbox.displaymedia(this.media)
-        })
-        return this.$wrapper
+            const lightbox = new Lightbox();
+            lightbox.displaymedia(this.media);
+        });
+        return this.$wrapper;
     }
 }

@@ -23,8 +23,8 @@ class Photographer_card{
         </a>
         <p>${this.photographer.city}, ${this.photographer.country}</p>
         <p>${this.photographer.tagline}</p>
-        <p>${this.photographer.price}€/jour</p> `
-        $section.innerHTML = Card_photographer
+        <p>${this.photographer.price}€/jour</p> `;
+        $section.innerHTML = Card_photographer;
         return $section;
     }
 }

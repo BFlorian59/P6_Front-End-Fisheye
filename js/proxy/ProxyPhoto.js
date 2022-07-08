@@ -4,9 +4,9 @@ class ProxyPhoto{
     }
 
     sorter(medias, orderBy) {
-        const cachedResult = this.cache.find(elt => elt.key === orderBy)
+        const cachedResult = this.cache.find(elt => elt.key === orderBy);
         if (cachedResult) {
-            console.log("get from cache")
+            console.log("get from cache");
 
             return cachedResult;
         }

@@ -56,4 +56,14 @@ main a{
 
 .photographer_card_wrapper p {
     margin: 1%;
+
+}
+
+.photographer_card_wrapper p:nth-child(2) {
+    color: #901C1C;
+}
+
+
+.photographer_card_wrapper p:nth-child(4) {
+    color: #525252;
 }
