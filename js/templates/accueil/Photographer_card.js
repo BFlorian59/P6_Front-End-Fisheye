@@ -4,6 +4,7 @@ class Photographer_card{
         this.photographer = photographer;
     }
 
+    // afficher les informations des photographes dans la page d'accueil
     createphotographer(){
         const $section = document.createElement('div');
         $section.classList.add('photographer_card_wrapper');

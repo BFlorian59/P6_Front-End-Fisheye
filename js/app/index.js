@@ -1,3 +1,4 @@
+// instancier la classe Api
 async function index () {
     const api = new Api("data/photographers.json");
     const data = await api.getPhotographer();

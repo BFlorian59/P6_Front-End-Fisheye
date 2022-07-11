@@ -3,10 +3,10 @@ class ProxyPhoto{
         this.cache = [];
     }
 
+    //stocker dans le cache les médias + instancier la class Sorterphoto
     sorter(medias, orderBy) {
         const cachedResult = this.cache.find(elt => elt.key === orderBy);
         if (cachedResult) {
-            console.log("get from cache");
 
             return cachedResult;
         }

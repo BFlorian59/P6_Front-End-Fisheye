@@ -5,6 +5,7 @@ class Counter{
 
     }
 
+    //compter + afficher les likes totaux
     getLikesNumber() {
         let likesNb = 0;
         this.photographerMedias.forEach((media) => {

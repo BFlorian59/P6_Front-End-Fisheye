@@ -6,6 +6,7 @@ class Sorterform{
         this.$mediaWrapper = document.querySelector("#gallery");
     }
 
+    // appliquer le trie aux media
     async sorterMedias (order) {
         this.clearMoviesWrapper();
 
@@ -66,7 +67,7 @@ class Sorterform{
         this.$mediaWrapper.innerHTML = "";
     }
 
-
+    // afficher le listbox
     render () {
         const inner = `
         <label id="listbox-label">Trier par</label>

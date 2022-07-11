@@ -6,6 +6,7 @@ class Lightbox{
         this.$attachedMedia = document.activeElement;
     }
 
+    // afficher les médias dans la lightbox
     displaymedia (media) {
         const picture = `assets/photographers/${media.photographerId}/${media.file}`;
         const imageElement = `
@@ -22,6 +23,7 @@ class Lightbox{
         this.$lightbox.querySelector('button').focus();
     }
 
+    // faire passer aux médias suivant
     nextmedia(direction){
         //Obtenir l'index dans les médias de l'image courante avec l'attribut media-id ajouté par la fonction d'affichage Lightbox
         const currentMediaId = document.querySelector('.lightbox-img').getAttribute('media-id');
@@ -54,6 +56,7 @@ class Lightbox{
         lightboxMedia.innerHTML = imageElement;
     }
 
+    // faire disparaitre la lightbox
     none () {
         this.$main.style.display = 'block';
         this.$main.setAttribute('aria-hidden', 'false');
@@ -98,7 +101,7 @@ class Lightbox{
         });
     }
     
-
+  // afficher les éléments dans le html 
   render () {
     this.$lightbox.setAttribute('aria-hidden', true);
     this.$lightbox.setAttribute('aria-label', 'image closeup view');

@@ -16,7 +16,6 @@ class App {
         data.photographers.forEach((nom) => {
             if (nom.name === photographerName) {
                 this.photographer = nom;
-                console.log(photographerName);
             }
         });
 
@@ -24,11 +23,12 @@ class App {
         data.media.forEach((media) => {
             if (media.photographerId === photographerId) {
                 this.medias.push(media);
-                console.log(photographerId);
 
             }
         });    
     }
+
+    //instancier les class du template + créer des card pour chaque média
     async main () {
         const $main = document.querySelector('#gallery');
         await this.fetch();        

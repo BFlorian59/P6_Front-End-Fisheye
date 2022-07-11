@@ -4,6 +4,7 @@ class InfoPhotographer{
         this.photographer = photographer;
     }
 
+    // afficher la modal quand on appuie sur le bouton
     displayModal() {
         const formcontact = new Formcontact();
         document.querySelector('.contact').addEventListener('click', () => {
@@ -11,6 +12,7 @@ class InfoPhotographer{
         });
     }
 
+    // faire apparaitre les informations du photographe
     info(){
         const photographerInfo = document.querySelector('#photographe');
         const picture = `assets/photographers/Photographers ID Photos/${this.photographer.portrait}`;

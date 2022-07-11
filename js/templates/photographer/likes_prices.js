@@ -6,6 +6,7 @@ class LikesPrice {
 
     }
 
+    //afficher le nombre de total de coeur
     render () {
         const Count = new Counter(this.photographer, this.photographerMedias);
         const inner = `

@@ -5,6 +5,7 @@ class Formcontact{
     this.$contactez = document.querySelector('.contact');
   }
 
+  // afficher le formulaire
   display () {
     const main = document.querySelector('.main-wrapper');
     main.setAttribute('aria-hidden', 'true');
@@ -14,6 +15,7 @@ class Formcontact{
     document.querySelector('#close').focus();
   }
 
+  //faire disparaitre le formulaire
   none () {
     const main = document.querySelector('.main-wrapper');
     main.setAttribute('aria-hidden', 'false');
@@ -24,12 +26,14 @@ class Formcontact{
     this.$contactez.focus();
   }
 
+  // fermer la modal
   onCloseButton () {
     document.querySelector('.cross').addEventListener('click', () => {
       this.none();
     });
   }
 
+  // fermer la modal avec le bouton echap
   echap(){
     // Close modal when escape key is pressed
     document.addEventListener('keydown', (event) => {
@@ -138,6 +142,7 @@ class Formcontact{
     }
   }
 
+  // afficher le formulaire dans le html
   form(){
     this.$formcontact.setAttribute('aria-hidden', true);
     this.$formcontact.setAttribute('role', 'dialog');

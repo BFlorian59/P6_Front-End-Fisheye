@@ -48,6 +48,7 @@ main img {
     height: 50%;
     width: 58%;
     clip-path: ellipse(49% 50%);
+    object-fit: cover;
 }
 
 main a{

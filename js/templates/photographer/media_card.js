@@ -17,8 +17,8 @@ class Media_Card{
             });
     }
 
+    //afficher les médias + le titre + les coeurs 
     createmedia(){
-        // console.log(this.media)
         const Media_Card = `
         <a class="media-link" href="#">
             <${this.media.type} src="assets/photographers/${this.media.photographerId}/${this.media.file}" alt="${this.media.title}"></${this.media.type}/>

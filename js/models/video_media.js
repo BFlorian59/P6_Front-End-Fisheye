@@ -7,6 +7,7 @@ class Video_media {
         this.price = media.price;
         this.date = media.date;
         this.likes = media.likes;
+        this.alt = media.image;
         this.type = 'video';
     }
 

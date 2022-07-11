@@ -3,6 +3,7 @@ class Api {
         this.url = url;
     }
 
+    // récupérer la base de donnée
     async getPhotographer () {
         return fetch(this.url)
         .then((response) => {
@@ -10,8 +11,7 @@ class Api {
         })
         .then((data) => {
             // Work with JSON data here
-            
-            console.log(data);
+    
             return data;
         })
         .catch((err) => {
