@@ -26,7 +26,7 @@ class Sorterform{
         }
     }
 
-    //l’accessibilité sur la listbox
+    //l’accessibilité sur la listbox + changement de direction de la flêche de la listbox
     addEventListeners () {
         const listboxOptions = document.querySelector("#listbox-options");
         document.querySelector("#listbox-active").addEventListener("click", () => {
@@ -62,7 +62,7 @@ class Sorterform{
             }
         });
     }
-
+    //Clean les médias quand on change le trie
     clearMoviesWrapper() {
         this.$mediaWrapper.innerHTML = "";
     }

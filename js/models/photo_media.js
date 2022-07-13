@@ -1,4 +1,5 @@
 class Photo_media {
+    //stocker les informations des médias photos
     constructor(media) {
         this.id = media.id;
         this.photographerId = media.photographerId;

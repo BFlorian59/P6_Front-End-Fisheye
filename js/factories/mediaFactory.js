@@ -1,4 +1,5 @@
 class MediaFactory {
+    //Créer les bons objets médias si ils sont une image ou une vidéo
     constructor (data) {
         if (Object.prototype.hasOwnProperty.call(data, "image")) {
             return new Photo_media(data);

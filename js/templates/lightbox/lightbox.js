@@ -74,6 +74,7 @@ class Lightbox{
         });
     }
 
+    //ferme la lightbox quand on appuie sur la croix
     onCloseButton () {
         this.$lightbox.querySelector('button').addEventListener('click', () => {
             this.none();
