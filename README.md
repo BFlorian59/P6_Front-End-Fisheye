@@ -2,5 +2,5 @@
 
 ## Démarrer le projet
 
-Rien à installer ici, il suffit d'ouvrir le fichier `index.html`.
+Il suffit d'installer et activer l'extension live serveur de Visual Studio.
 
